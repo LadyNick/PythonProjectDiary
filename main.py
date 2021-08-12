@@ -1,5 +1,5 @@
 ''' Things I' going to want in this, so like a checklist I guess
-[ ] A menu
+[X] A menu
 [ ] A password system perhaps?
 [ ] A way to make entries
     [ ] Make Entry as an object or class
@@ -10,12 +10,35 @@
               **Cause otherwise every time you close the program and reload it it would 
                 prolly all be wiped
               **Gonna be a lot of io filestream type things
-'''
-
-from Diary import Print_Menu
+'''              
+          
+from DiaryModule import *
+import os
+os.system('cls')
 special_message = "Ello der Chuck"
 print("\nWelcome to Nikki's Diary\n")
-#insert big cool text art thingy saying "Nikki's Diary," "
+#insert big cool text art thingy saying "Nikki's Diary," " instead of plain text
 
+#testing entry stuff, it worked
+#testing = DiaryEntry()
+#print(testing.date,testing.time,testing.title)
+
+
+#Menu Area
 Print_Menu()
 choice = input("Select: ")
+
+while choice != 'Q':
+  if choice == 'N':
+    print("Nothing for now")
+  elif choice == 'R':
+    print("Nothing for now")
+  elif choice == 'V':
+    print("Nothing for now")
+  os.system('cls')
+  print("\nWelcome to Nikki's Diary\n")
+  if choice == 'C':
+        print(special_message,"\n")
+  Print_Menu()
+  choice = input("Select: ")
+print("\nAdios\n")
