@@ -19,10 +19,6 @@ special_message = "Ello der Chuck"
 print("\nWelcome to Nikki's Diary\n")
 #insert big cool text art thingy saying "Nikki's Diary," " instead of plain text
 
-#testing entry stuff, it worked
-#testing = DiaryEntry()
-#print(testing.date,testing.time,testing.title)
-
 
 #Menu Area
 Print_Menu()
@@ -30,7 +26,9 @@ choice = input("Select: ")
 
 while choice != 'Q':
   if choice == 'N':
-    print("Nothing for now")
+    ttl = input("Enter a Title: ")
+    newentry = DiaryEntry(ttl)
+    text = input("Start: ")
   elif choice == 'R':
     print("Nothing for now")
   elif choice == 'V':

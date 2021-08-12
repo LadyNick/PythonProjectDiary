@@ -12,9 +12,14 @@ def Print_Menu():
 
 class DiaryEntry:
     'This is the class for creating diary entries, but it might be more like an object'
-    current_day_time = datetime.datetime.now()
-    date = current_day_time.strftime("%d/%m/%Y")
-    title = "Default Title"
-    time = current_day_time.strftime("%I:%M %p")
+    
+    def __init__(self, title):
+      current_day_time = datetime.datetime.now()
+      self.date = current_day_time.strftime("%m/%d/%Y")
+      self.title = title;
+      self.time = current_day_time.strftime("%I:%M %p")
+    
+    
+    
     
     
