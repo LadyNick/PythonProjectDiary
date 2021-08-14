@@ -29,6 +29,9 @@ while choice != 'Q':
     ttl = input("Enter a Title: ")
     newentry = DiaryEntry(ttl)
     text = input("Start: ")
+    with open('DiaryEntries.txt', 'a') as storage:
+      totalentry = newentry.date + " " + newentry.time + " " + newentry.title + "\n\n" + '\t' + text + '\n\n'
+      storage.write(totalentry) 
   elif choice == 'R':
     print("Nothing for now")
   elif choice == 'V':
