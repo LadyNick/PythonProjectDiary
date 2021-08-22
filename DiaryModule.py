@@ -15,16 +15,41 @@ def DiaryReload():
 
 class DiaryEntry:
     'This is the class for creating diary entries, but it might be more like an object'
+    charlim = 60
     
     def __init__(self, title):
       current_day_time = datetime.datetime.now()
       self.date = current_day_time.strftime("%m/%d/%Y")
-      self.title = title;
+      self.title = title
       self.time = current_day_time.strftime("%I:%M %p")
       self.text = ""
       
-    def SetDiaryText(text):
+    def SetDiaryText(self, text):
         self.text = text
+        
+    def EntryFormat(self):
+        rawtextwords = self.text.split()
+        reformedtext = ""
+        currline = ""
+        currwordcount = 0
+        charcount = 0
+        
+        while (currwordcount < rawtextwords.len()):
+            currword = rawtextwords[currwordcount]
+            if (currword.len() + charcount) > charlim :
+                reformedtext = currline + '\n'
+                currline = currword + " " 
+                charcount = currword.len() + 1
+            else:
+                charcount += currword.len()
+                currline += currword + " "    
+        return reformedtext
+        
+        
+   
+        
+        
+        
     
     
     
