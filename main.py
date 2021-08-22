@@ -34,7 +34,7 @@ while choice != 'Q':
     newentry.SetDiaryText(text)
     with open('DiaryEntries.txt', 'a') as storage:
       totalentry = newentry.date + " " + newentry.time + " " + newentry.title + "\n\n" 
-      totalentry += EntryFormat(text)+ '\n\n'
+      totalentry += newentry.EntryFormat() + '\n\n'
       storage.write(totalentry) 
   elif choice == 'R':
     print("Nothing for now")
