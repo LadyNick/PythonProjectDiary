@@ -42,7 +42,8 @@ class DiaryEntry:
                 charcount = len(currword) + 1
             else:
                 charcount += len(currword)
-                currline += currword + " "    
+                currline += currword + " "   
+            ++currwordcount 
         return reformedtext
         
         
