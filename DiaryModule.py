@@ -37,13 +37,14 @@ class DiaryEntry:
         while (currwordcount < len(rawtextwords)):
             currword = rawtextwords[currwordcount]
             if (len(currword) + charcount) > DiaryEntry.charlim :
-                reformedtext = currline + '\n'
+                reformedtext += currline + '\n'
                 currline = currword + " " 
                 charcount = len(currword) + 1
             else:
-                charcount += len(currword)
+                charcount += len(currword) + 1
                 currline += currword + " "   
-            ++currwordcount 
+            ++currwordcount
+        reformedtext += currline 
         return reformedtext
         
         
