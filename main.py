@@ -14,6 +14,7 @@
           
 from DiaryModule import *
 import os
+DiaryReload()
 os.system('cls')
 special_message = "Ello der Chuck"
 print("\nWelcome to Nikki's Diary\n")
@@ -29,8 +30,10 @@ while choice != 'Q':
     ttl = input("Enter a Title: ")
     newentry = DiaryEntry(ttl)
     text = input("Start: ")
+    newentry.SetDiaryText(text)
     with open('DiaryEntries.txt', 'a') as storage:
-      totalentry = newentry.date + " " + newentry.time + " " + newentry.title + "\n\n" + '\t' + text + '\n\n'
+      totalentry = newentry.date + " " + newentry.time + " " + newentry.title + "\n\n" 
+      totalentry += Entryformat(text)+ '\n\n'
       storage.write(totalentry) 
   elif choice == 'R':
     print("Nothing for now")

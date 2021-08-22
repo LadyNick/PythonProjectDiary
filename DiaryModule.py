@@ -9,6 +9,9 @@ def Print_Menu():
     print("[Q] - Close Diary\n")
     return
 
+def DiaryReload():
+    "This is for loading the entries from the txt file"
+    return
 
 class DiaryEntry:
     'This is the class for creating diary entries, but it might be more like an object'
@@ -18,6 +21,10 @@ class DiaryEntry:
       self.date = current_day_time.strftime("%m/%d/%Y")
       self.title = title;
       self.time = current_day_time.strftime("%I:%M %p")
+      self.text = ""
+      
+    def SetDiaryText(text):
+        self.text = text
     
     
     
